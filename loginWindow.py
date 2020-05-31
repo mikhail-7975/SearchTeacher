@@ -52,3 +52,21 @@ class Ui_Dialog(object):
         self.passwordlabel.setText(_translate("Dialog", "Password"))
         self.userNamelabel.setText(_translate("Dialog", "User name"))
         self.createAccountPushButton.setText(_translate("Dialog", "create new account"))
+
+class loginWindowController(QtWidgets.QDialog, Ui_Dialog):
+    def __init__(self, parent = None):
+        super(loginWindowController, self).__init__(parent)
+        self.setupUi(self)
+        #self.SetPushButton.clicked.connect(self.setButton_click)
+        #self.ConnectPushButton.clicked.connect(self.connectButton_click)
+        #self.pushButtonConnectTest.clicked.connect(self.testConnectButton_click)
+        #self.pushButtonSendTest.clicked.connect(self.testSendButton_click)
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    w = loginWindowController()# = QtWidgets.QMainWindow()
+    #ui = Ui_MainWindow()
+    #ui.setupUi(MainWindow)
+    w.show()#MainWindow.show()
+    sys.exit(app.exec_())
