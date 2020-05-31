@@ -52,3 +52,13 @@ class Ui_Dialog(object):
         self.PurpoueLabel.setText(_translate("Dialog", "Purpose"))
         self.Marklabel.setText(_translate("Dialog", "Rating"))
         self.cancelOrderPushButton.setText(_translate("Dialog", "Cancel an order"))
+
+class newOrderPageController(QtWidgets.QDialog, Ui_Dialog):
+    def __init__(self, parent = None):
+        super(newOrderPageController, self).__init__(parent)
+        self.setupUi(self)
+        self.cancelOrderPushButton.clicked.connect(self.cancelOrderPushButton_clicked)
+
+        @QtCore.pyqtSlot()
+        def cancelOrderPushButton_clicked():
+            print("cancelOrderPushButton_clicked")

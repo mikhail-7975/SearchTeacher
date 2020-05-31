@@ -10,17 +10,12 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class LoginWindowUI(object):
+class logInWindowUI(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(400, 300)
-        self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
-        self.buttonBox.setGeometry(QtCore.QRect(30, 240, 341, 32))
-        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName("buttonBox")
         self.gridLayoutWidget = QtWidgets.QWidget(Dialog)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(29, 19, 341, 211))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(29, 19, 341, 251))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -40,10 +35,11 @@ class LoginWindowUI(object):
         self.createAccountPushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
         self.createAccountPushButton.setObjectName("createAccountPushButton")
         self.gridLayout.addWidget(self.createAccountPushButton, 2, 0, 1, 1)
+        self.LogInPushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.LogInPushButton.setObjectName("LogInPushButton")
+        self.gridLayout.addWidget(self.LogInPushButton, 2, 1, 1, 1)
 
         self.retranslateUi(Dialog)
-        self.buttonBox.accepted.connect(Dialog.accept)
-        self.buttonBox.rejected.connect(Dialog.reject)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
@@ -52,22 +48,30 @@ class LoginWindowUI(object):
         self.passwordlabel.setText(_translate("Dialog", "Password"))
         self.userNamelabel.setText(_translate("Dialog", "User name"))
         self.createAccountPushButton.setText(_translate("Dialog", "create new account"))
+        self.LogInPushButton.setText(_translate("Dialog", "Log in"))
 
-class loginWindowController(QtWidgets.QDialog, LoginWindowUI):
+class loginWindowController(QtWidgets.QDialog, logInWindowUI):
+    login = "hello world"
+    password = "123456"
+    allowLogin = 0
     def __init__(self, parent = None):
         super(loginWindowController, self).__init__(parent)
         self.setupUi(self)
         self.createAccountPushButton.clicked.connect(self.createAccountPushButton_click)
+        self.LogInPushButton.clicked.connect(self.LogInPushButton_click)
 
     @QtCore.pyqtSlot()
     def createAccountPushButton_click(self):
         print("createAccountPushButton clicked")
-        #app = QtWidgets.QApplication(sys.argv)
-        w = loginWindowController()  # = QtWidgets.QMainWindow()
-        # ui = Ui_MainWindow()
-        # ui.setupUi(MainWindow)
-        w.show()  # MainWindow.show()
-        #app.exec_()
+
+    @QtCore.pyqtSlot()
+    def LogInPushButton_click(self):
+        print("LogInPushButton_click")
+        print(self.userNamelineEdit.text(), " == ", self.login, "?")
+        if(self.userNamelineEdit.text() == self.login):
+            print("yes")
+            self.allowLogin = 0
+        
 
 
 

@@ -142,3 +142,13 @@ class Ui_MainWindow(object):
         self.startSearctPushButton.setText(_translate("MainWindow", "Search"))
         self.newOrederPushButton.setText(_translate("MainWindow", "New order"))
         self.mainWindowTabWidget.setTabText(self.mainWindowTabWidget.indexOf(self.SearchTab), _translate("MainWindow", "Search"))
+
+class newOrderPageController(QtWidgets.QDialog, Ui_MainWindow):
+    def __init__(self, parent = None):
+        super(newOrderPageController, self).__init__(parent)
+        self.setupUi(self)
+        self.newOrederPushButton.clicked.connect(self.newOrederPushButton_clicked)
+
+        @QtCore.pyqtSlot()
+        def newOrederPushButton_clicked():
+            print("newOrederPushButton_clicked")
