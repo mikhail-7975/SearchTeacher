@@ -8,16 +8,16 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from newOrder import newOrderPageController
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(806, 604)
+        MainWindow.resize(802, 613)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(9, 9, 781, 531))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(9, 29, 781, 531))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -115,17 +115,17 @@ class Ui_MainWindow(object):
         self.ResultsscrollArea.setWidget(self.scrollAreaWidgetContents)
         self.mainWindowTabWidget.addTab(self.SearchTab, "")
         self.gridLayout.addWidget(self.mainWindowTabWidget, 0, 0, 1, 1)
-        MainWindow.setCentralWidget(self.centralwidget)
+        #MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 806, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 802, 26))
         self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
+        #MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+       # MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.mainWindowTabWidget.setCurrentIndex(1)
+        self.mainWindowTabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -143,12 +143,13 @@ class Ui_MainWindow(object):
         self.newOrederPushButton.setText(_translate("MainWindow", "New order"))
         self.mainWindowTabWidget.setTabText(self.mainWindowTabWidget.indexOf(self.SearchTab), _translate("MainWindow", "Search"))
 
-class newOrderPageController(QtWidgets.QDialog, Ui_MainWindow):
+class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
     def __init__(self, parent = None):
-        super(newOrderPageController, self).__init__(parent)
+        super(mainWindowController, self).__init__(parent)
         self.setupUi(self)
         self.newOrederPushButton.clicked.connect(self.newOrederPushButton_clicked)
 
-        @QtCore.pyqtSlot()
-        def newOrederPushButton_clicked():
-            print("newOrederPushButton_clicked")
+    @QtCore.pyqtSlot()
+    def newOrederPushButton_clicked(self):
+        print("newOrederPushButton_clicked")
+

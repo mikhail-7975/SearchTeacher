@@ -70,8 +70,8 @@ class loginWindowController(QtWidgets.QDialog, logInWindowUI):
         print(self.userNamelineEdit.text(), " == ", self.login, "?")
         if(self.userNamelineEdit.text() == self.login):
             print("yes")
-            self.allowLogin = 0
-        
+            self.allowLogin = 1
+
 
 
 

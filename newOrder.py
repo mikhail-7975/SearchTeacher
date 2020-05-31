@@ -73,5 +73,5 @@ class newOrderPageController(QtWidgets.QDialog, NewOrderUi):
         self.CreateOrderPushButton.clicked.connect(self.CreateOrderPushButton_clicked)
 
         @QtCore.pyqtSlot()
-        def CreateOrderPushButton_clicked():
+        def CreateOrderPushButton_clicked(self):
             print("CreateOrderPushButton_clicked")
