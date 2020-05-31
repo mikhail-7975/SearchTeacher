@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
+class OrderPageUI(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(400, 300)
@@ -62,3 +62,13 @@ class Ui_Dialog(object):
         self.Reauiredlabel.setText(_translate("Dialog", "Who is required:"))
         self.Pricelabel.setText(_translate("Dialog", "Price"))
         self.RespondpushButton.setText(_translate("Dialog", "Respond"))
+
+class orderPageController(QtWidgets.QDialog, OrderPageUI):
+    def __init__(self, parent = None):
+        super(orderPageController, self).__init__(parent)
+        self.setupUi(self)
+        self.RespondpushButton.clicked.connect(self.RespondpushButton_click)
+
+    @QtCore.pyqtSlot()
+    def RespondpushButton_click(self):
+        print("RespondpushButton_click")

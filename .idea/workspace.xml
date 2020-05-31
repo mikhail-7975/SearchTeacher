@@ -50,7 +50,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="loginWindow" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+    <configuration name="loginWindowUI" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="SearchTeacher" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -62,7 +62,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/loginWindow.py" />
+      <option name="SCRIPT_NAME" value="F:\OOAD\SearchTeacher\loginWindowUI.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -95,7 +95,7 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.cancelOrder" />
-      <item itemvalue="Python.loginWindow" />
+      <item itemvalue="Python.loginWindowUI" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -116,26 +116,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="216" y="91" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1590944941920" />
+    <state x="414" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1590954608901">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="414" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1590954608901" />
     <state x="548" y="170" key="FileChooserDialogImpl" timestamp="1590944938981">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1590944938981" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1590953536388">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1590953873097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590953536388" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1590953536387">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1590953873097" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1590953873097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590953536387" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1590953536387">
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1590953873097" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1590953873096">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590953536387" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1590953536388">
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1590953873096" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1590953873097">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590953536388" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1590953873097" />
     <state x="279" y="58" key="SettingsEditor" timestamp="1590850414490">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

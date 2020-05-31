@@ -2,7 +2,7 @@ from cancelOrder import *
 from mainWindow import *
 from newOrder import *
 from orderPage import  *
-from loginWindow import *
+from loginWindowUI import *
 
 if __name__ == "__main__":
     import sys
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     app.exec_()
     print("closed")
     app1 = app
-    w1 = loginWindowController()  # = QtWidgets.QMainWindow()
+    w1 = orderPageController()  # = QtWidgets.QMainWindow()
     # ui = Ui_MainWindow()
     # ui.setupUi(MainWindow)
     w1.show()  # MainWindow.show()

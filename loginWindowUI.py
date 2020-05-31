@@ -10,7 +10,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
+class LoginWindowUI(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(400, 300)
@@ -53,7 +53,7 @@ class Ui_Dialog(object):
         self.userNamelabel.setText(_translate("Dialog", "User name"))
         self.createAccountPushButton.setText(_translate("Dialog", "create new account"))
 
-class loginWindowController(QtWidgets.QDialog, Ui_Dialog):
+class loginWindowController(QtWidgets.QDialog, LoginWindowUI):
     def __init__(self, parent = None):
         super(loginWindowController, self).__init__(parent)
         self.setupUi(self)
