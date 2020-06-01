@@ -8,7 +8,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from newOrder import newOrderPageController
+
+from newOrder import newOrderPageController, NewOrderUi
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -99,20 +100,18 @@ class Ui_MainWindow(object):
         self.SetSubjectcomboBox = QtWidgets.QComboBox(self.gridLayoutWidget_5)
         self.SetSubjectcomboBox.setObjectName("SetSubjectcomboBox")
         self.ParametrSearchGridLayout.addWidget(self.SetSubjectcomboBox, 0, 1, 1, 1)
-        self.startSearctPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
-        self.startSearctPushButton.setObjectName("startSearctPushButton")
-        self.ParametrSearchGridLayout.addWidget(self.startSearctPushButton, 0, 2, 1, 1)
+        self.searchPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
+        self.searchPushButton.setObjectName("startSearctPushButton")
+        self.ParametrSearchGridLayout.addWidget(self.searchPushButton, 0, 2, 1, 1)
         self.newOrederPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
         self.newOrederPushButton.setObjectName("newOrederPushButton")
         self.ParametrSearchGridLayout.addWidget(self.newOrederPushButton, 0, 3, 1, 1)
-        self.ResultsscrollArea = QtWidgets.QScrollArea(self.SearchTab)
-        self.ResultsscrollArea.setGeometry(QtCore.QRect(9, 96, 751, 391))
-        self.ResultsscrollArea.setWidgetResizable(True)
-        self.ResultsscrollArea.setObjectName("ResultsscrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 749, 389))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.ResultsscrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.gridLayoutWidget_7 = QtWidgets.QWidget(self.SearchTab)
+        self.gridLayoutWidget_7.setGeometry(QtCore.QRect(9, 99, 751, 391))
+        self.gridLayoutWidget_7.setObjectName("gridLayoutWidget_7")
+        self.resultsGridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget_7)
+        self.resultsGridLayout.setContentsMargins(0, 0, 0, 0)
+        self.resultsGridLayout.setObjectName("resultsGridLayout")
         self.mainWindowTabWidget.addTab(self.SearchTab, "")
         self.gridLayout.addWidget(self.mainWindowTabWidget, 0, 0, 1, 1)
         #MainWindow.setCentralWidget(self.centralwidget)
@@ -122,10 +121,10 @@ class Ui_MainWindow(object):
         #MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
-       # MainWindow.setStatusBar(self.statusbar)
+        #MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.mainWindowTabWidget.setCurrentIndex(0)
+        self.mainWindowTabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -139,7 +138,7 @@ class Ui_MainWindow(object):
         self.groupBox.setTitle(_translate("MainWindow", "Active orders"))
         self.mainWindowTabWidget.setTabText(self.mainWindowTabWidget.indexOf(self.UserPageTab), _translate("MainWindow", "UserPage"))
         self.SubjectLabel.setText(_translate("MainWindow", "Subject"))
-        self.startSearctPushButton.setText(_translate("MainWindow", "Search"))
+        self.searchPushButton.setText(_translate("MainWindow", "Search"))
         self.newOrederPushButton.setText(_translate("MainWindow", "New order"))
         self.mainWindowTabWidget.setTabText(self.mainWindowTabWidget.indexOf(self.SearchTab), _translate("MainWindow", "Search"))
 
@@ -148,8 +147,26 @@ class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
         super(mainWindowController, self).__init__(parent)
         self.setupUi(self)
         self.newOrederPushButton.clicked.connect(self.newOrederPushButton_clicked)
+        self.searchPushButton.clicked.connect(self.searchPushButton_clicked)
 
     @QtCore.pyqtSlot()
     def newOrederPushButton_clicked(self):
-        print("newOrederPushButton_clicked")
+        newOrderDialog = QtWidgets.QDialog()
+        ui = NewOrderUi()
+        ui.setupUi(newOrderDialog)
+        newOrderDialog.exec_()
+
+        print(ui.SetPricelineEdit.text())
+        #self.newOrderWin = newOrderPageController()
+    @QtCore.pyqtSlot()
+    def searchPushButton_clicked(self):
+        print("searchPushButton_clicked")
+        '''self.startSearctPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
+        self.startSearctPushButton.setObjectName("startSearctPushButton")
+        self.ParametrSearchGridLayout.addWidget(self.startSearctPushButton, 0, 2, 1, 1)'''
+        self.openOrderButton = QtWidgets.QPushButton("open order")
+        self.resultsGridLayout.addWidget(self.openOrderButton, 0, 2, 1, 1)
+        #self.newOrderWin.show()
+
+        #print(self.windowAdd)
 
