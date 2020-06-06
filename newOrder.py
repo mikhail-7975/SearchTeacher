@@ -73,7 +73,11 @@ class newOrderPageController(QtWidgets.QDialog, Ui_Dialog):
     @QtCore.pyqtSlot()
     def CreateOrderPushButton_clicked(self):
         print("CreateOrderPushButton_clicked")
+        subject = self.SubjectLineEdit.text()
+        author = self.NameLineEdit.text()
+        whoReq = self.wantFindLneEdit.text()
+        price = self.pricelineEdit.text()
         orderDataBase = db.database("orderDB")
         orderDataBase.readFromFile("orderdb.txt")
-        orderDataBase.insert("OOD", "Stavro Evg.", "bestsenno", "created")
+        orderDataBase.insert(subject, author, whoReq, price, "created")
         orderDataBase.writeInFile("orderdb.txt")

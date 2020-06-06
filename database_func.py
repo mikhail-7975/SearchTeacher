@@ -7,6 +7,7 @@ class element:
     def __init__(self, _subject: str, _author: str, _whoReq: str, _price: str, _status: str):
         self.subject = _subject
         self.author = _author
+        self.whoRequired = _whoReq
         self.price = _price
         self.status = _status
 
@@ -18,9 +19,9 @@ class database:
     def __init__(self, name):
         self.db_name = name
 
-    def insert(self, subject, teacher, price, status,  id=-1):
+    def insert(self, subject, author, whoReq, price, status,  id=-1):
         self.odrerCounter += 1
-        info = element(subject, teacher, price, status)
+        info = element(subject, author, whoReq, price, status)
         #dict.update(self.odrerCounter, info)
         if (id == -1):
             self.data[self.odrerCounter] = info
@@ -30,7 +31,8 @@ class database:
     def writeInFile(self, fileName):
         f = open(fileName, "w")
         for key in self.data:
-            f.write(str(key) + "\t" + str(self.data[key].subject) + "\t" + str(str(self.data[key].teacher)) + "\t" + str(self.data[key].price) + "\t" + str(self.data[key].status) + "\n")
+            f.write(str(key) + "\t" + str(self.data[key].subject) + "\t" + str(str(self.data[key].author)) +
+                    "\t" + str(str(self.data[key].whoRequired)) + "\t" + str(self.data[key].price) + "\t" + str(self.data[key].status) + "\n")
         f.close()
 
     def readFromFile(self, fileName):
@@ -66,8 +68,8 @@ class database:
         except Exception:
             return None
 
-    def modify(self, fileName, id, _subject: str, _teacher: str, _price: str, _status: str):
+    def modify(self, fileName, id, _subject: str, _author: str, _whoReq: str, _price: str, _status: str):
         self.readFromFile(fileName)
-        self.data[id] = element(_subject, _teacher, _price, _status)
+        self.data[id] = element(_subject, _author, _whoReq, _price, _status)
         self.writeInFile(fileName)
 
