@@ -169,24 +169,14 @@
           </rect>
          </property>
          <layout class="QGridLayout" name="ParametrSearchGridLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="SubjectLabel">
+          <item row="1" column="3">
+           <widget class="QPushButton" name="openOrderPushButton">
             <property name="text">
-             <string>Subject</string>
+             <string>OpenOrderPage</string>
             </property>
            </widget>
           </item>
           <item row="0" column="3">
-           <widget class="QPushButton" name="newOrederPushButton">
-            <property name="text">
-             <string>New order</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="SetSubjectcomboBox"/>
-          </item>
-          <item row="0" column="2">
            <widget class="QPushButton" name="startSearctPushButton">
             <property name="text">
              <string>Search</string>
@@ -201,31 +191,79 @@
            </widget>
           </item>
           <item row="1" column="2">
-           <widget class="QPushButton" name="openOrderPushButton">
-            <property name="text">
-             <string>OpenOrderPage</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
            <widget class="QLineEdit" name="orderIdLineEdit">
             <property name="maxLength">
              <number>200</number>
             </property>
            </widget>
           </item>
+          <item row="0" column="4">
+           <widget class="QPushButton" name="newOrederPushButton">
+            <property name="text">
+             <string>New order</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="SubjectLabel">
+            <property name="text">
+             <string>Subject</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QLineEdit" name="subjectLineEdit"/>
+          </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="gridLayoutWidget_7">
+        <widget class="QGroupBox" name="resultGroupBox">
          <property name="geometry">
           <rect>
-           <x>9</x>
-           <y>99</y>
+           <x>10</x>
+           <y>110</y>
            <width>751</width>
-           <height>391</height>
+           <height>371</height>
           </rect>
          </property>
-         <layout class="QGridLayout" name="resultsGridLayout"/>
+         <property name="title">
+          <string>Results</string>
+         </property>
+         <widget class="QScrollArea" name="scrollArea">
+          <property name="geometry">
+           <rect>
+            <x>9</x>
+            <y>16</y>
+            <width>731</width>
+            <height>341</height>
+           </rect>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>729</width>
+             <height>339</height>
+            </rect>
+           </property>
+           <widget class="QLabel" name="resultShowLabel">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>10</y>
+              <width>711</width>
+              <height>321</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </widget>
+         </widget>
         </widget>
        </widget>
       </widget>

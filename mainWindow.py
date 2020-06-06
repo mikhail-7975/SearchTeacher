@@ -18,6 +18,15 @@ from newOrder import *
 # WARNING! All changes made in this file will be lost!
 
 
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'mainWindow.ui'
+#
+# Created by: PyQt5 UI code generator 5.13.0
+#
+# WARNING! All changes made in this file will be lost!
+
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -104,34 +113,43 @@ class Ui_MainWindow(object):
         self.ParametrSearchGridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget_5)
         self.ParametrSearchGridLayout.setContentsMargins(0, 0, 0, 0)
         self.ParametrSearchGridLayout.setObjectName("ParametrSearchGridLayout")
-        self.SubjectLabel = QtWidgets.QLabel(self.gridLayoutWidget_5)
-        self.SubjectLabel.setObjectName("SubjectLabel")
-        self.ParametrSearchGridLayout.addWidget(self.SubjectLabel, 0, 0, 1, 1)
-        self.newOrederPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
-        self.newOrederPushButton.setObjectName("newOrederPushButton")
-        self.ParametrSearchGridLayout.addWidget(self.newOrederPushButton, 0, 3, 1, 1)
-        self.SetSubjectcomboBox = QtWidgets.QComboBox(self.gridLayoutWidget_5)
-        self.SetSubjectcomboBox.setObjectName("SetSubjectcomboBox")
-        self.ParametrSearchGridLayout.addWidget(self.SetSubjectcomboBox, 0, 1, 1, 1)
+        self.openOrderPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
+        self.openOrderPushButton.setObjectName("openOrderPushButton")
+        self.ParametrSearchGridLayout.addWidget(self.openOrderPushButton, 1, 3, 1, 1)
         self.startSearctPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
         self.startSearctPushButton.setObjectName("startSearctPushButton")
-        self.ParametrSearchGridLayout.addWidget(self.startSearctPushButton, 0, 2, 1, 1)
+        self.ParametrSearchGridLayout.addWidget(self.startSearctPushButton, 0, 3, 1, 1)
         self.orderOdlabel = QtWidgets.QLabel(self.gridLayoutWidget_5)
         self.orderOdlabel.setObjectName("orderOdlabel")
         self.ParametrSearchGridLayout.addWidget(self.orderOdlabel, 1, 0, 1, 1)
-        self.openOrderPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
-        self.openOrderPushButton.setObjectName("openOrderPushButton")
-        self.ParametrSearchGridLayout.addWidget(self.openOrderPushButton, 1, 2, 1, 1)
         self.orderIdLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget_5)
         self.orderIdLineEdit.setMaxLength(200)
         self.orderIdLineEdit.setObjectName("orderIdLineEdit")
-        self.ParametrSearchGridLayout.addWidget(self.orderIdLineEdit, 1, 1, 1, 1)
-        self.gridLayoutWidget_7 = QtWidgets.QWidget(self.SearchTab)
-        self.gridLayoutWidget_7.setGeometry(QtCore.QRect(9, 99, 751, 391))
-        self.gridLayoutWidget_7.setObjectName("gridLayoutWidget_7")
-        self.resultsGridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget_7)
-        self.resultsGridLayout.setContentsMargins(0, 0, 0, 0)
-        self.resultsGridLayout.setObjectName("resultsGridLayout")
+        self.ParametrSearchGridLayout.addWidget(self.orderIdLineEdit, 1, 2, 1, 1)
+        self.newOrederPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
+        self.newOrederPushButton.setObjectName("newOrederPushButton")
+        self.ParametrSearchGridLayout.addWidget(self.newOrederPushButton, 0, 4, 1, 1)
+        self.SubjectLabel = QtWidgets.QLabel(self.gridLayoutWidget_5)
+        self.SubjectLabel.setObjectName("SubjectLabel")
+        self.ParametrSearchGridLayout.addWidget(self.SubjectLabel, 0, 0, 1, 1)
+        self.subjectLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget_5)
+        self.subjectLineEdit.setObjectName("subjectLineEdit")
+        self.ParametrSearchGridLayout.addWidget(self.subjectLineEdit, 0, 2, 1, 1)
+        self.resultGroupBox = QtWidgets.QGroupBox(self.SearchTab)
+        self.resultGroupBox.setGeometry(QtCore.QRect(10, 110, 751, 371))
+        self.resultGroupBox.setObjectName("resultGroupBox")
+        self.scrollArea = QtWidgets.QScrollArea(self.resultGroupBox)
+        self.scrollArea.setGeometry(QtCore.QRect(9, 16, 731, 341))
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 729, 339))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.resultShowLabel = QtWidgets.QLabel(self.scrollAreaWidgetContents)
+        self.resultShowLabel.setGeometry(QtCore.QRect(10, 10, 711, 321))
+        self.resultShowLabel.setText("")
+        self.resultShowLabel.setObjectName("resultShowLabel")
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.mainWindowTabWidget.addTab(self.SearchTab, "")
         self.gridLayout.addWidget(self.mainWindowTabWidget, 0, 0, 1, 1)
         #MainWindow.setCentralWidget(self.centralwidget)
@@ -157,12 +175,15 @@ class Ui_MainWindow(object):
         self.label_10.setText(_translate("MainWindow", "/10"))
         self.groupBox.setTitle(_translate("MainWindow", "Active orders"))
         self.mainWindowTabWidget.setTabText(self.mainWindowTabWidget.indexOf(self.UserPageTab), _translate("MainWindow", "UserPage"))
-        self.SubjectLabel.setText(_translate("MainWindow", "Subject"))
-        self.newOrederPushButton.setText(_translate("MainWindow", "New order"))
+        self.openOrderPushButton.setText(_translate("MainWindow", "OpenOrderPage"))
         self.startSearctPushButton.setText(_translate("MainWindow", "Search"))
         self.orderOdlabel.setText(_translate("MainWindow", "OrderId                   "))
-        self.openOrderPushButton.setText(_translate("MainWindow", "OpenOrderPage"))
+        self.newOrederPushButton.setText(_translate("MainWindow", "New order"))
+        self.SubjectLabel.setText(_translate("MainWindow", "Subject"))
+        self.resultGroupBox.setTitle(_translate("MainWindow", "Results"))
         self.mainWindowTabWidget.setTabText(self.mainWindowTabWidget.indexOf(self.SearchTab), _translate("MainWindow", "Search"))
+
+
 
 
 class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
