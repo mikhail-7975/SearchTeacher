@@ -23,42 +23,52 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
-     <widget class="QLabel" name="Pricelabel">
-      <property name="text">
-       <string>Price for hour</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QComboBox" name="SetRolecomboBox"/>
-    </item>
-    <item row="0" column="0">
+    <item row="1" column="0">
      <widget class="QLabel" name="Subjectlabel">
       <property name="text">
-       <string>TextLabel</string>
+       <string>Subject</string>
       </property>
      </widget>
     </item>
-    <item row="0" column="1">
-     <widget class="QComboBox" name="SetSubjectcomboBox"/>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="pricelineEdit"/>
     </item>
-    <item row="1" column="0">
+    <item row="4" column="1">
+     <widget class="QPushButton" name="CreateOrderPushButton">
+      <property name="text">
+       <string>Create</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
      <widget class="QLabel" name="Rolelabel">
       <property name="text">
        <string>I want to found </string>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="SetPricelineEdit"/>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="SubjectLineEdit"/>
     </item>
-    <item row="3" column="1">
-     <widget class="QPushButton" name="CreateOrderPushButton">
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="wantFindLneEdit"/>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="Pricelabel">
       <property name="text">
-       <string>Create</string>
+       <string>Price for hour</string>
       </property>
      </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="yourNameLabel">
+      <property name="text">
+       <string>Your name</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="NameLineEdit"/>
     </item>
    </layout>
   </widget>

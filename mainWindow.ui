@@ -176,6 +176,13 @@
             </property>
            </widget>
           </item>
+          <item row="0" column="3">
+           <widget class="QPushButton" name="newOrederPushButton">
+            <property name="text">
+             <string>New order</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="1">
            <widget class="QComboBox" name="SetSubjectcomboBox"/>
           </item>
@@ -186,10 +193,24 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="3">
-           <widget class="QPushButton" name="newOrederPushButton">
+          <item row="1" column="0">
+           <widget class="QLabel" name="orderOdlabel">
             <property name="text">
-             <string>New order</string>
+             <string>OrderId                   </string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="openOrderPushButton">
+            <property name="text">
+             <string>OpenOrderPage</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="orderIdLineEdit">
+            <property name="maxLength">
+             <number>200</number>
             </property>
            </widget>
           </item>
