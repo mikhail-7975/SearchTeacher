@@ -8,7 +8,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from sendContacts import *
+import database_func as db
 
 class OrderPageUI(object):
     def setupUi(self, Dialog):
@@ -64,11 +65,23 @@ class OrderPageUI(object):
         self.RespondpushButton.setText(_translate("Dialog", "Respond"))
 
 class orderPageController(QtWidgets.QDialog, OrderPageUI):
-    def __init__(self, parent = None):
+
+    def __init__(self, id: int, parent = None):
+        self.orderId = id
         super(orderPageController, self).__init__(parent)
         self.setupUi(self)
+        orderDataBase = db.database("orderDB")
+        res = orderDataBase.returnWithId(self.orderId)
+        self.ShowPricelabel.setText(res.price)
+        self.ShowPricelabel.adjustSize()
+        self.ShowRequiredlabel.setText(res.whoRequired)
+        self.ShowRequiredlabel.adjustSize()
+        self.ShowSubjectlabel.setText(res.subject)
+        self.ShowSubjectlabel.adjustSize()
         self.RespondpushButton.clicked.connect(self.RespondpushButton_click)
 
     @QtCore.pyqtSlot()
     def RespondpushButton_click(self):
         print("RespondpushButton_click")
+        sendContactsWin = sendContactsController()
+        sendContactsWin.exec_()

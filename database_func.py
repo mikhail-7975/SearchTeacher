@@ -63,10 +63,16 @@ class database:
         return result
 
     def returnWithId(self, id):
+        print(int(id))
+        print(id)
+        print(type(id))
         try:
-            return self.data[id]
+            result = self.data[int(id)]
+
         except Exception:
-            return None
+            result = element("0", "0", "0", "0", "0")
+
+        return result
 
     def modify(self, fileName, id, _subject: str, _author: str, _whoReq: str, _price: str, _status: str):
         self.readFromFile(fileName)

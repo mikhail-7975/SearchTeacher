@@ -8,25 +8,7 @@
 
 
 from newOrder import *
-
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'mainWindow.ui'
-#
-# Created by: PyQt5 UI code generator 5.13.0
-#
-# WARNING! All changes made in this file will be lost!
-
-
-# -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'mainWindow.ui'
-#
-# Created by: PyQt5 UI code generator 5.13.0
-#
-# WARNING! All changes made in this file will be lost!
-
-
+from orderPage import *
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
@@ -192,7 +174,7 @@ class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
         self.setupUi(self)
         self.newOrederPushButton.clicked.connect(self.newOrederPushButton_clicked)
         self.startSearctPushButton.clicked.connect(self.searchPushButton_clicked)
-
+        self.openOrderPushButton.clicked.connect(self.openOrderPushButton_clicked)
     @QtCore.pyqtSlot()
     def newOrederPushButton_clicked(self):
         newOrderDialog = newOrderPageController()#QtWidgets.QDialog()
@@ -218,3 +200,8 @@ class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
 
         #print(self.windowAdd)
 
+    @QtCore.pyqtSlot()
+    def openOrderPushButton_clicked(self):
+        id = self.orderIdLineEdit.text()
+        OrderDialog = orderPageController(id)
+        OrderDialog.exec_()
