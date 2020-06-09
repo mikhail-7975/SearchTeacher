@@ -1,0 +1,2 @@
+961	prog	mik	teacher	1000	created
+8787	prog	vlad	student	300	created

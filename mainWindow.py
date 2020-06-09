@@ -205,6 +205,10 @@ class mainWindowController(QtWidgets.QDialog, Ui_MainWindow):
     @QtCore.pyqtSlot()
     def searchPushButton_clicked(self):
         print("searchPushButton_clicked")
+        subject = self.subjectLineEdit.text()
+        orderDataBase = db.database("orderDB")
+        res = orderDataBase.searchInFile("orderdb.txt", subject)
+        self.resultShowLabel.setText(res)
         '''self.startSearctPushButton = QtWidgets.QPushButton(self.gridLayoutWidget_5)
         self.startSearctPushButton.setObjectName("startSearctPushButton")
         self.ParametrSearchGridLayout.addWidget(self.startSearctPushButton, 0, 2, 1, 1)'''

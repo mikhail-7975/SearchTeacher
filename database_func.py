@@ -1,3 +1,5 @@
+import random
+
 class element:
     subject = ""
     author = ""
@@ -24,7 +26,7 @@ class database:
         info = element(subject, author, whoReq, price, status)
         #dict.update(self.odrerCounter, info)
         if (id == -1):
-            self.data[self.odrerCounter] = info
+            self.data[random.randint(0, 1000000)] = info
         else:
             self.data[id] = info
 
@@ -52,15 +54,13 @@ class database:
         f = open(fileName, "r")
         strings = f.read().split("\n")
         self.stringsOfTable = strings
+        result = ""
         for i in self.stringsOfTable:
             #S.find(str, [start],[end])
             if(i.find(stringToSearch) != -1):
-                try:
-                    _id, subjectName, teacherName, price = i.split("\t")
-                    self.insert(subjectName, teacherName, price, id=_id)
-                except Exception:
-                    print("WTF???")
+                result += (i + '\n')
         f.close()
+        return result
 
     def returnWithId(self, id):
         try:
