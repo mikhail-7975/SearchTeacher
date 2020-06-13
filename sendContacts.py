@@ -8,7 +8,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from database_func import *
+import database_func as db
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -42,7 +42,7 @@ class Ui_Dialog(object):
 
 class sendContactsController(QtWidgets.QDialog, Ui_Dialog):
     def __init__(self, id: int,parent = None):
-        self.orderId = 
+        self.orderId = id
         super(sendContactsController, self).__init__(parent)
         self.setupUi(self)
         self.pushButton.clicked.connect(self.pushButton_clicked)
@@ -51,4 +51,9 @@ class sendContactsController(QtWidgets.QDialog, Ui_Dialog):
     def pushButton_clicked(self):
         print("pushButton_clicked")
         contact = self.lineEdit.text()
-        d=
+        dbtofindorder = db.database("orderDB")
+        dbtofindorder.readFromFile("orderdb.txt")
+        element = dbtofindorder.returnWithId(self.orderId)
+        #(self, fileName, id, _subject: str, _author: str, _whoReq: str, _price: str, _status: str)
+        orderDB = db.database("orderDB")
+        orderDB.modify("orderdb.txt", self.orderId, element.subject, element.author, element.whoRequired, element.price, "respond " + contact)
